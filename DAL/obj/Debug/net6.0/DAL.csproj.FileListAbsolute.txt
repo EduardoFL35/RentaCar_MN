@@ -1,0 +1,15 @@
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\bin\Debug\net6.0\DAL.dll
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\bin\Debug\net6.0\Entities.dll
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\bin\Debug\net6.0\Entities.pdb
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.dll
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Fidelitas\VII Cuatri\Programación avanzada en Web\Proyecto\PrograAvanzadaRentaCar\RentaCar\DAL\obj\Debug\net6.0\ref\DAL.dll
