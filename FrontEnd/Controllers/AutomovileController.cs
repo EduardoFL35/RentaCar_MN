@@ -1,5 +1,4 @@
-﻿using FrontEnd.Helpers.Implementations;
-using FrontEnd.Helpers.Interfaces;
+﻿using FrontEnd.Helpers.Interfaces;
 using FrontEnd.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -12,13 +11,23 @@ namespace FrontEnd.Controllers
     {
 
         IAutomovileHelper automovileHelper;
+        ICategoriaHelper categoriaHelper;
+        ISedeHelper sedeHelper;
+        ISeguroHelper seguroHelper;
+
         public string Token { get; set; }
 
 
-        public AutomovileController(IAutomovileHelper _automovileHelper)
+        public AutomovileController(IAutomovileHelper _automovileHelper
+                                    , ICategoriaHelper _categoriaHelper
+                                    , ISedeHelper _sedeHelper
+                                    , ISeguroHelper _seguroHelper
+                                    )
         {
             automovileHelper = _automovileHelper;
-
+            categoriaHelper = _categoriaHelper;
+            sedeHelper = _sedeHelper;
+            seguroHelper = _seguroHelper;
         }
         // GET: AutomovileController
         public ActionResult Index()
@@ -47,7 +56,11 @@ namespace FrontEnd.Controllers
 
             Token = HttpContext.Session.GetString("token");
             automovileHelper.Token = Token;
+
             AutomovileViewModel automovile = new AutomovileViewModel();
+            automovile.Categorias = categoriaHelper.GetAll();
+            automovile.Sedes = sedeHelper.GetAll();
+            automovile.Seguros = seguroHelper.GetAll();
 
 
 

@@ -8,8 +8,8 @@ namespace FrontEnd.Helpers.Interfaces
         string Token { get; set; }
         List<AutomovileViewModel> GetAll();
         AutomovileViewModel GetById(int id);
-        AutomovileViewModel AddAutomovile(AutomovileViewModel automovileViewModel);
-        AutomovileViewModel EditAutomovile(AutomovileViewModel automovileViewModel);
+        AutomovileViewModel AddAutomovile(AutomovileViewModel AutomovileViewModel);
+        AutomovileViewModel EditAutomovile(AutomovileViewModel AutomovileViewModel);
 
         void DeleteAutomovile(int id);
 

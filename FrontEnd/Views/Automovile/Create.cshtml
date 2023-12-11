@@ -54,17 +54,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="IdCategorias" class="control-label"></label>
-                <input asp-for="IdCategorias" class="form-control" />
+                @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Categorias,"Id","DescripcionCategoria"),"--Select Categoria--")
                 <span asp-validation-for="IdCategorias" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdDeSedes" class="control-label"></label>
-                <input asp-for="IdDeSedes" class="form-control" />
+                @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Sedes,"Id","NombreUbi"),"--Select Ubicacion--")
                 <span asp-validation-for="IdDeSedes" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="IdSeguros" class="control-label"></label>
-                <input asp-for="IdSeguros" class="form-control" />
+                @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Seguros,"Id","TipoSeguro"),"--Select Seguro--")
                 <span asp-validation-for="IdSeguros" class="text-danger"></span>
             </div>
             <div class="form-group">

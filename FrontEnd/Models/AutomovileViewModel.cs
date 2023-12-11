@@ -12,8 +12,10 @@
         public int Precio { get; set; }
         public DateTime FechaActualizado { get; set; }
         public int IdCategorias { get; set; }
+        public IEnumerable<CategoriaViewModel>Categorias { get; set; }
         public int IdDeSedes { get; set; }
+        public IEnumerable<SedeViewModel> Sedes { get; set; }
         public int IdSeguros { get; set; }
-
+        public IEnumerable<SeguroViewModel> Seguros { get; set; }
     }
 }
