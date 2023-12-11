@@ -1,6 +1,7 @@
 ﻿using BackEnd.Models;
 using BackEnd.Services.Interfaces;
 using Entities.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 
@@ -9,6 +10,8 @@ using System.ComponentModel;
 namespace BackEnd.Controllers
 {
     [Route("api/[controller]")]
+
+    [Authorize]
     [ApiController]
     public class TransaccionController : ControllerBase
     {
