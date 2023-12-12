@@ -3,8 +3,86 @@
 @{
     ViewData["Title"] = "Create";
 }
+<div class="container my-4">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Registro de Clientes</h3>
+        </div>
+        <div class="card-body">
 
-<h1>Create</h1>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label asp-for="Apellido" class="control-label"></label>
+                        <input asp-for="Apellido" class="form-control" />
+                        <span asp-validation-for="Apellido" class="text-danger"></span>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label asp-for="Correo" class="control-label"></label>
+                        <input asp-for="Correo" class="form-control" />
+                        <span asp-validation-for="Correo" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label asp-for="Usuario" class="control-label"></label>
+                        <input asp-for="Usuario" class="form-control" />
+                        <span asp-validation-for="Usuario" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label asp-for="Contraseña" class="control-label"></label>
+                        <input asp-for="Contraseña" class="form-control" />
+                        <span asp-validation-for="Contraseña" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label asp-for="DireccionUsuario" class="control-label"></label>
+                        <input asp-for="DireccionUsuario" class="form-control" />
+                        <span asp-validation-for="DireccionUsuario" class="text-danger"></span>
+                    </div>
+                </div>
+                <br>
+                <div class="form-footer">
+                    <div class="text-end">
+                        <div class="d-flex">
+                            <a asp-action="Index" class="btn btn-danger m-2">Cancelar</a>
+                            <input type="submit" value="Create" style="color: #ffffff; background-color: #001F3F;" class="btn m-2" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <h1>Create</h1>
 
 <h4>ClienteViewModel</h4>
 <hr />
@@ -57,3 +135,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+ *@

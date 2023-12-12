@@ -4,7 +4,133 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="page-header">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <!-- Page pre-title -->
+                <h2 class="page-title">
+                    Listado de mantenimiento
+                </h2>
+            </div>
+            <!-- Page title actions -->
+            <div class="col-12 col-md-auto ms-auto d-print-none">
+                <div class="btn-list">
+                    <a asp-action="Create" class="btn btn-danger">Nuevo mantenimiento</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row row-deck row-cards">
+            <div class="col-12">
+                <div class="card">
+                    <div class="table-responsive min-vh-100">
+                        <table class="table card-table table-vcenter text-nowrap datatable">
+                            <thead class="table-secondary ">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TipoMantenimiento)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FechaInicio)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FechaFinalizacion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Costo)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.DescripcionMantenimiento)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Estado)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.FechaActualizado)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.IdAutomovil)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.IdAutomovile)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TipoMantenimiento)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FechaInicio)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FechaFinalizacion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Costo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DescripcionMantenimiento)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Estado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FechaActualizado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdAutomovil)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdAutomovile)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+                                            @Html.ActionLink("Details", "Details", new {  id=item.Id  }) |
+                                            @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<@* h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -48,42 +174,43 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoMantenimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaFinalizacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Costo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DescripcionMantenimiento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaActualizado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdAutomovil)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdAutomovile)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.Id  }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoMantenimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaFinalizacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Costo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescripcionMantenimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaActualizado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdAutomovil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdAutomovile)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+                    @Html.ActionLink("Details", "Details", new {  id=item.Id  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+                </td>
         </tr>
 }
     </tbody>
 </table>
+ *@
