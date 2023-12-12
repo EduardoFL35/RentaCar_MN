@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using FrontEnd.Helpers.Implementations;
+using NuGet.Common;
 
 namespace FrontEnd.Controllers
 {
@@ -98,6 +100,36 @@ namespace FrontEnd.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return LocalRedirect("/");
         }
+
+
+
+
+        public ActionResult Register()
+        {
+
+            UserViewModel user = new UserViewModel();
+            return View(user);
+        }
+
+        // POST: CategoriaController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(UserViewModel user)
+        {
+            try
+            {
+
+                SecurityHelper.Register(user);
+
+                return RedirectToAction("Index", "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
 
 
     }

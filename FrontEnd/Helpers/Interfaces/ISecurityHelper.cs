@@ -7,6 +7,7 @@ namespace FrontEnd.Helpers.Interfaces
     {
         LoginModel GetUser(UserViewModel user);
         TokenModel Login(UserViewModel user);
-
+        UserViewModel Register(UserViewModel userViewModel);
+       
     }
 }

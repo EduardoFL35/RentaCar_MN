@@ -1,6 +1,7 @@
 ﻿using FrontEnd.Helpers.Interfaces;
 using FrontEnd.Models;
 using Newtonsoft.Json;
+using NuGet.Common;
 using NuGet.Protocol.Core.Types;
 
 namespace FrontEnd.Helpers.Implementations
@@ -48,5 +49,23 @@ namespace FrontEnd.Helpers.Implementations
                 throw;
             }
         }
+
+
+        public UserViewModel Register(UserViewModel userViewModel)
+        {
+
+
+            UserViewModel user = new UserViewModel();
+            HttpResponseMessage responseMessage = ServiceRepository.PostResponse("api/Authenticate/Register", userViewModel);
+            if (responseMessage != null)
+            {
+                var content = responseMessage.Content.ReadAsStringAsync().Result;
+                user = JsonConvert.DeserializeObject<UserViewModel>(content);
+            }
+
+            return user;
+        }
+
+
     }
 }
