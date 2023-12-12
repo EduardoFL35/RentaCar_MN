@@ -1,5 +1,4 @@
-﻿using FrontEnd.Helpers.Implementations;
-using FrontEnd.Helpers.Interfaces;
+﻿using FrontEnd.Helpers.Interfaces;
 using FrontEnd.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -12,16 +11,27 @@ namespace FrontEnd.Controllers
     {
 
         ITransaccioneHelper transaccioneHelper;
+        IAutomovileHelper automovileHelper;
+        IClienteHelper clienteHelper;
+        IEmpleadoHelper empleadoHelper;
+
+
         public string Token { get; set; }
 
 
-        public TransaccioneController(ITransaccioneHelper _transaccioneHelper)
+        public TransaccioneController(ITransaccioneHelper _transaccioneHelper
+                                        , IAutomovileHelper _automovileHelper
+                                        , IClienteHelper _clienteHelper
+                                        , IEmpleadoHelper _empleadoHelper
+                                        )
         {
             transaccioneHelper = _transaccioneHelper;
-
+            automovileHelper = _automovileHelper;
+            clienteHelper = _clienteHelper;
+            empleadoHelper = _empleadoHelper;
         }
-        // GET: TransaccioneController
-        public ActionResult Index()
+            // GET: TransaccioneController
+            public ActionResult Index()
         {
             Token = HttpContext.Session.GetString("token");
             transaccioneHelper.Token = Token;
@@ -47,7 +57,11 @@ namespace FrontEnd.Controllers
 
             Token = HttpContext.Session.GetString("token");
             transaccioneHelper.Token = Token;
+
             TransaccioneViewModel transaccione = new TransaccioneViewModel();
+            transaccione.Automoviles = automovileHelper.GetAll();
+            transaccione.Clientes = clienteHelper.GetAll();
+            transaccione.Empleados = empleadoHelper.GetAll();
 
 
 

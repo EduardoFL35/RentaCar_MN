@@ -67,14 +67,13 @@ namespace FrontEnd.Helpers.Implementations
 
         public List<CategoriaViewModel> GetAll()
         {
-
+                
             _repository.Client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
-
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
             List<CategoriaViewModel> lista = new List<CategoriaViewModel>();
-
             HttpResponseMessage responseMessage = _repository.GetResponse("api/Categoria");
+
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
