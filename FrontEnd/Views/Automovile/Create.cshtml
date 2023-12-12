@@ -70,13 +70,15 @@
                 <div class="form-group row">
                     <div class="col-sm-6">
                         <label asp-for="IdCategorias" class="control-label"></label>
-                        @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Categorias,"Id","DescripcionCategoria"),"--Select Categoria--")
+                        <input asp-for="IdCategorias" class="form-control" />
+                        @* @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Categorias,"Id","DescripcionCategoria"),"--Select Categoria--") *@
                         <span asp-validation-for="IdCategorias" class="text-danger"></span>
                     </div>
 
                     <div class="col-sm-6">
                         <label asp-for="IdDeSedes" class="control-label"></label>
-                        @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Sedes,"Id","NombreUbi"),"--Select Ubicacion--")
+                        <input asp-for="IdDeSedes" class="form-control" />
+                        @* @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Sedes,"Id","NombreUbi"),"--Select Ubicacion--") *@
                         <span asp-validation-for="IdDeSedes" class="text-danger"></span>
                     </div>
                 </div>
@@ -84,7 +86,8 @@
                 <div class="form-group row">
                     <div class="col-sm-6">
                         <label asp-for="IdSeguros" class="control-label"></label>
-                        @Html.DropDownListFor(model=>model.Id, new SelectList(Model.Seguros,"Id","TipoSeguro"),"--Select Seguro--")
+                        @*@Html.DropDownListFor(model=>model.Id, new SelectList(Model.Seguros,"Id","TipoSeguro"),"--Select Seguro--") *@
+                        <input asp-for="IdSeguros" class="form-control" />
                         <span asp-validation-for="IdSeguros" class="text-danger"></span>
                     </div>
                 </div>
