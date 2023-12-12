@@ -10,9 +10,11 @@
         public string Detalles { get; set; } = null!;
         public DateTime ShipmentDate { get; set; }
         public int IdAutomovil { get; set; }
+        public IEnumerable<AutomovileViewModel> Automoviles { get; set; }
         public int IdCliente { get; set; }
+        public IEnumerable<ClienteViewModel> Clientes { get; set; }
         public int IdEmpleado { get; set; }
-
+        public IEnumerable<EmpleadoViewModel> Empleados { get; set; }
 
     }
 }

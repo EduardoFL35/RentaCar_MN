@@ -58,9 +58,9 @@ namespace FrontEnd.Controllers
             automovileHelper.Token = Token;
 
             AutomovileViewModel automovile = new AutomovileViewModel();
-            automovile.Categorias = categoriaHelper.GetAll();
-            automovile.Sedes = sedeHelper.GetAll();
-            automovile.Seguros = seguroHelper.GetAll();
+            //automovile.Categorias = categoriaHelper.GetAll();
+            //automovile.Sedes = sedeHelper.GetAll();
+            //automovile.Seguros = seguroHelper.GetAll();
 
 
 
@@ -94,6 +94,9 @@ namespace FrontEnd.Controllers
             automovileHelper.Token = Token;
 
             AutomovileViewModel automovile = automovileHelper.GetById(id);
+            //automovile.Categorias = categoriaHelper.GetAll();
+            //automovile.Sedes = sedeHelper.GetAll();
+            //automovile.Seguros = seguroHelper.GetAll();
 
             return View(automovile);
         }
