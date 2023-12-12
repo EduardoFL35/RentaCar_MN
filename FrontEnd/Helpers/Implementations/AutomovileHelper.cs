@@ -23,7 +23,7 @@ namespace FrontEnd.Helpers.Implementations
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
             AutomovileViewModel automovile = new AutomovileViewModel();
-            HttpResponseMessage responseMessage = _repository.PostResponse("api/Automovile", AutomovileViewModel);
+            HttpResponseMessage responseMessage = _repository.PostResponse("api/Automovil", AutomovileViewModel);
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -39,7 +39,7 @@ namespace FrontEnd.Helpers.Implementations
             _repository.Client.DefaultRequestHeaders.Authorization =
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
-            HttpResponseMessage responseMessage = _repository.DeleteResponse("api/Automovile/" + id.ToString());
+            HttpResponseMessage responseMessage = _repository.DeleteResponse("api/Automovil/" + id.ToString());
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -55,7 +55,7 @@ namespace FrontEnd.Helpers.Implementations
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
             AutomovileViewModel automovile = new AutomovileViewModel();
-            HttpResponseMessage responseMessage = _repository.PutResponse("api/Automovile", AutomovileViewModel);
+            HttpResponseMessage responseMessage = _repository.PutResponse("api/Automovil", AutomovileViewModel);
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -74,7 +74,7 @@ namespace FrontEnd.Helpers.Implementations
 
             List<AutomovileViewModel> lista = new List<AutomovileViewModel>();
 
-            HttpResponseMessage responseMessage = _repository.GetResponse("api/Automovile");
+            HttpResponseMessage responseMessage = _repository.GetResponse("api/Automovil");
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -91,7 +91,7 @@ namespace FrontEnd.Helpers.Implementations
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
             AutomovileViewModel automovile = new AutomovileViewModel();
-            HttpResponseMessage responseMessage = _repository.GetResponse("api/Automovile/" + id.ToString());
+            HttpResponseMessage responseMessage = _repository.GetResponse("api/Automovil/" + id.ToString());
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;

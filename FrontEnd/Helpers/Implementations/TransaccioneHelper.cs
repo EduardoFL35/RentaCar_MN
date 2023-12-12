@@ -23,7 +23,7 @@ namespace FrontEnd.Helpers.Implementations
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
             TransaccioneViewModel transaccione = new TransaccioneViewModel();
-            HttpResponseMessage responseMessage = _repository.PostResponse("api/Transaccione", transaccioneViewModel);
+            HttpResponseMessage responseMessage = _repository.PostResponse("api/Transaccion", transaccioneViewModel);
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -38,7 +38,7 @@ namespace FrontEnd.Helpers.Implementations
             _repository.Client.DefaultRequestHeaders.Authorization =
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
-            HttpResponseMessage responseMessage = _repository.DeleteResponse("api/Transaccione/" + id.ToString());
+            HttpResponseMessage responseMessage = _repository.DeleteResponse("api/Transaccion/" + id.ToString());
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -54,7 +54,7 @@ namespace FrontEnd.Helpers.Implementations
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
             TransaccioneViewModel transaccione = new TransaccioneViewModel();
-            HttpResponseMessage responseMessage = _repository.PutResponse("api/Transaccione", transaccioneViewModel);
+            HttpResponseMessage responseMessage = _repository.PutResponse("api/Transaccion", transaccioneViewModel);
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -73,7 +73,7 @@ namespace FrontEnd.Helpers.Implementations
 
             List<TransaccioneViewModel> lista = new List<TransaccioneViewModel>();
 
-            HttpResponseMessage responseMessage = _repository.GetResponse("api/Transaccione");
+            HttpResponseMessage responseMessage = _repository.GetResponse("api/Transaccion");
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -89,7 +89,7 @@ namespace FrontEnd.Helpers.Implementations
             new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
 
             TransaccioneViewModel transaccione = new TransaccioneViewModel();
-            HttpResponseMessage responseMessage = _repository.GetResponse("api/Transaccione/" + id.ToString());
+            HttpResponseMessage responseMessage = _repository.GetResponse("api/Transaccion/" + id.ToString());
             if (responseMessage != null)
             {
                 var content = responseMessage.Content.ReadAsStringAsync().Result;
