@@ -4,36 +4,45 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>CategoriaViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="container my-4">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Registro de Automóvil</h3>
+        </div>
+        <div class="card-body">
 
-            <div class="form-group">
-                <label asp-for="DescripcionCategoria" class="control-label"></label>
-                <input asp-for="DescripcionCategoria" class="form-control" />
-                <span asp-validation-for="DescripcionCategoria" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Licencia" class="control-label"></label>
-                <input asp-for="Licencia" class="form-control" />
-                <span asp-validation-for="Licencia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label asp-for="DescripcionCategoria" class="control-label"></label>
+                        <input asp-for="DescripcionCategoria" class="form-control" />
+                        <span asp-validation-for="DescripcionCategoria" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label asp-for="Licencia" class="control-label"></label>
+                        <input asp-for="Licencia" class="form-control" />
+                        <span asp-validation-for="Licencia" class="text-danger"></span>
+                    </div>
+                </div>
+                <br>
+                <div class="form-footer">
+                    <div class="text-end">
+                        <div class="d-flex">
+                            <a asp-action="Index">Cancelar</a>
+                            <input type="submit" value="Create" style="color: #ffffff; background-color: #001F3F;" class="btn" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+       await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

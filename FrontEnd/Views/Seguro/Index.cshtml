@@ -4,50 +4,78 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="page-header">
+    <div class="container-xl">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <!-- Page pre-title -->
+                <h2 class="page-title">
+                    Listado de Sedes
+                </h2>
+            </div>
+            <!-- Page title actions -->
+            <div class="col-12 col-md-auto ms-auto d-print-none">
+                <div class="btn-list">
+                    <a asp-action="Create" class="btn btn-danger">Nuevo Seguro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-body">
+    <div class="container-xl">
+        <div class="row row-deck row-cards">
+            <div class="col-12">
+                <div class="card">
+                    <div class="table-responsive min-vh-100">
+                        <table class="table card-table table-vcenter text-nowrap datatable">
+                            <thead class="table-secondary ">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Id)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TipoSeguro)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CostoSeguro)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Descripcion)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TipoSeguro)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CostoSeguro)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }, new { @class = "btn btn-primary" })
+                                            @Html.ActionLink("Details", "Details", new {  id=item.Id  }, new { @class = "btn btn-primary" })
+                                            @Html.ActionLink("Delete", "Delete", new {  id=item.Id  }, new { @class = "btn btn-primary" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoSeguro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CostoSeguro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoSeguro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CostoSeguro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                @Html.ActionLink("Details", "Details", new {  id=item.Id  }) |
-                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
