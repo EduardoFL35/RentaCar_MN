@@ -1,42 +1,125 @@
 ﻿@model FrontEnd.Models.UserViewModel
 
 @{
-    ViewData["Title"] = "Login";
     Layout = "";
 }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .fondo-login {
+            width: 100%;
+            height: 100%;
+            --s: 200px; /* control the size */
+            --c1: #1d1d1d;
+            --c2: #4e4f51;
+            --c3: #3c3c3c;
+            background: repeating-conic-gradient( from 30deg, #0000 0 120deg, var(--c3) 0 180deg ) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577), repeating-conic-gradient( from 30deg, var(--c1) 0 60deg, var(--c2) 0 120deg, var(--c3) 0 180deg );
+            background-size: var(--s) calc(var(--s) * 0.577);
+        }
 
-<h1>Login</h1>
+        .page {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-height: 100%;
+        }
 
-<h4>UserViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Login">
+        navbar {
+            flex-grow: 1;
+        }
 
-            @Html.HiddenFor(Model=>Model.ReturnUrl)
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
-                <span asp-validation-for="UserName" class="text-danger"></span>
+
+        .fondo {
+            width: 1270px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 25px;
+        }
+
+        .page-pretitle {
+            font-size: 0.625rem;
+            font-weight: var(--tblr-font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            line-height: 1rem;
+            color: var(--tblr-secondary);
+        }
+
+        .page-title {
+            margin: 0;
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        .align-items-center {
+            align-items: center !important;
+        }
+
+        .page-header {
+            margin: 24px;
+        }
+
+
+        .th-list {
+            padding: 20px !important;
+            margin: 20px !important;
+        }
+
+        .td-list {
+            padding: 20px !important;
+            margin: 20px !important;
+        }
+
+        .text-red {
+            color: red !important;
+        }
+
+        .nav-fondo {
+            background: #ffffff !important;
+        }
+    </style>
+</head>
+
+
+<body class="fondo-login">
+    <div style="max-width: 30rem;" class="container py-4">
+        <div class="card card-md mb-1 mt-5">
+            <div class="card-body">
+                <h2 class="h2 text-center mb-4">Bienvenido de Vuelta!</h2>
+                <form asp-action="Login">
+                    @Html.HiddenFor(Model=>Model.ReturnUrl)
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label asp-for="UserName" class="control-label"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-2">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-footer">
+                        <input type="submit" value="Login" class="btn btn-dark w-100" />
+                    </div>
+                </form>
             </div>
-           
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-           
-           
-            <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
 
 
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+</body>
