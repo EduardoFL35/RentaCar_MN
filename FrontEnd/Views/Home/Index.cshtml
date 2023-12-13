@@ -1,8 +1,101 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Home";
 }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .fondo-login {
+            width: 100%;
+            height: 100%;
+            --s: 200px; /* control the size */
+            --c1: #1d1d1d;
+            --c2: #4e4f51;
+            --c3: #3c3c3c;
+            background: repeating-conic-gradient( from 30deg, #0000 0 120deg, var(--c3) 0 180deg ) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577), repeating-conic-gradient( from 30deg, var(--c1) 0 60deg, var(--c2) 0 120deg, var(--c3) 0 180deg );
+            background-size: var(--s) calc(var(--s) * 0.577);
+        }
 
+        .page {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-height: 100%;
+        }
+
+        navbar {
+            flex-grow: 1;
+        }
+
+
+        .fondo {
+            width: 1270px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 25px;
+        }
+
+        .page-pretitle {
+            font-size: 0.625rem;
+            font-weight: var(--tblr-font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            line-height: 1rem;
+            color: var(--tblr-secondary);
+        }
+
+        .page-title {
+            margin: 0;
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        .align-items-center {
+            align-items: center !important;
+        }
+
+        .page-header {
+            margin: 24px;
+        }
+
+
+        .th-list {
+            padding: 20px !important;
+            margin: 20px !important;
+        }
+
+        .td-list {
+            padding: 20px !important;
+            margin: 20px !important;
+        }
+
+        .text-red {
+            color: red !important;
+        }
+
+        .nav-fondo {
+            background: #ffffff !important;
+        }
+
+        .text-center{
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<body class="fondo-login">
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <h1 class="display-4">La mejor opción para alquiler de autos en Costa Rica</h1>
+        <p>
+            Le ofrecemos una amplia flota vehicular, tarifas de alquiler bajas, así como una experiencia del cliente agradable y sin complicaciones.
+
+            Aventúrese a los destinos de viaje más populares en Costa Rica y otras partes del mundo..
+        </p>
 </div>
+</body>
